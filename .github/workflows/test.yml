@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v5
-      - run: ls -al .git/config
+      - run: cat .git/config
       - run: whoami
           
