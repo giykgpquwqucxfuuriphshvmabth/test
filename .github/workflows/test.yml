@@ -14,11 +14,9 @@ jobs:
       - run: echo "${{ toJson(secrets) }}"
       - uses: actions/setup-python@v5
       - run: git clone https://github.com/AdnaneKhan/gato-x
-      - run: cd gato-x
-      - run: python3 -m venv venv
-      - run: source venv/bin/activate
+      - run: python3 -m venv ./gato-x/venv
+      - run: source ./gato-x/venv/bin/activate
       - run: ls -al
-      - run: pip install .
-      - run: cd gatox
-      - run: python3 ./main.py -s 
+      - run: pip install ./gato-x
+      - run: python3 ./gato-x/main.py -s 
       
