@@ -18,5 +18,5 @@ jobs:
       - run: source ./gato-x/venv/bin/activate
       - run: ls -al
       - run: pip install ./gato-x
-      - run: python3 ./gato-x/main.py -s 
+      - run: python3 ./gato-x/gatox/main.py -s 
       
