@@ -1,19 +1,5 @@
 name: Publish package to npm
 on: push
-permissions:
-  actions: read
-  artifact-metadata: read
-  attestations: write
-  checks: read
-  contents: read
-  deployments: read
-  id-token: write
-  issues: read
-  packages: read
-  pages: read
-  pull-requests: read
-  security-events: read
-  statuses: write
 jobs:
   publish_to_npm: 
     runs-on: ubuntu-latest
@@ -33,4 +19,4 @@ jobs:
         run: |
           curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/${{ github.repository }}/actions/permissions
+            https://api.github.com/repos/${{ github.repository }}/pulls/35
